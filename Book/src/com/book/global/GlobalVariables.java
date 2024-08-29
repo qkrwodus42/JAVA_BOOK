@@ -10,6 +10,9 @@ public interface GlobalVariables {
 	
 	//listScreen
 	int seeListNum = 1;
+	int seeByTitle = 2;
+	int seeByPrice = 3;
+	int reviseNum = 4;
 	
 	//saveScreen
 	int saveNum = 1;

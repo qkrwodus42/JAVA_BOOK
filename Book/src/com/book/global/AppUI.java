@@ -68,23 +68,37 @@ public class AppUI {
 	public static void listScreen() {
 		System.out.println("\n==========목록 시스템 ==========");
 		System.out.println("### 1. 전체 목록 보기");
-		System.out.println("### 9. 메인 페이지로 돌아가기");		 
+		System.out.println("### 2. 책 이름 순으로 목록  보기");
+		System.out.println("### 3. 책 가격 순으로 목록 보기");
+		System.out.println("### 4. 책 수정하기");
+		System.out.println("### 9. 메인 페이지로 돌아가기");
 		TerminateProgramMessages();
 		System.out.println("--------------------------------------");
 		System.out.print(">>>");
 	}
 	
+	public static void reviseBookScreen() {
+		System.out.println("\n==========책 수정 시스템 ==========");
+		System.out.println("### 1. 책 이름 수정하기");
+		System.out.println("### 2. 책 가격 수정하기");
+		System.out.println("### 3. 책 출판사 수정하기");
+		System.out.println("### 4. 책 출판 년도 수정하기");
+		System.out.println("### 9. 메인 페이지로 돌아가기");
+		TerminateProgramMessages();
+		System.out.println("--------------------------------------");
+		System.out.print(">>>");
 	
+	}
 	
 	// 검색
 	public static void searchingScreen() {
 		System.out.println("\n=========검색 시스템=========");
-		System.out.println("### 1. 책 이름으로 조회하기");
+		System.out.println("### 1. 책 이름으로 조회하기");	
 		System.out.println("### 2. 출판사 이름으로 조회하기");
 		System.out.println("### 9. 메인 페이지로 돌아가기");
 		TerminateProgramMessages();
 		System.out.println("----------------------------------------");
 		System.out.print(">>> "); 
 	}
-
+ 
 }

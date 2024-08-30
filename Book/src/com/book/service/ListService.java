@@ -2,6 +2,9 @@ package com.book.service;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
 import com.book.book.Book;
 import com.book.data.DummyDatas;
@@ -29,6 +32,8 @@ public class ListService implements Start, GlobalVariables{
 					break;
 				case reviseNum:
 					reviseBook();
+				case removeNum:
+					removeBook();
 				case returnSection:
 					return; //메인화면으로 돌아가기	
 				case terminateNum:  //프로그램 종료
@@ -62,7 +67,7 @@ public class ListService implements Start, GlobalVariables{
 					reviseYear();
 					break;
 				case GlobalVariables.returnSection: 
-					return; //건의사항 페이지으로 돌아가기				
+					return; 			
 				default:
 					AppUI.DefaultMessages();	
 			}
@@ -72,7 +77,7 @@ public class ListService implements Start, GlobalVariables{
 	}
 
 
-	private void seeAllList() {
+	public static void seeAllList() {
 		for (int i = 0; i < DummyDatas.books.size(); i++) {
 			System.out.println(DummyDatas.books.get(i));
 			
@@ -144,7 +149,7 @@ public class ListService implements Start, GlobalVariables{
 		System.out.println("수정할 출판사를 입력해주세요");
 		String inputWord2 = AppUI.InputString();
 		DummyDatas.books.stream()
-			.filter(book -> book.getTitle().equals(inputWord))
+			.filter(book -> book.getTitle().equalsIgnoreCase(inputWord))
 			.findFirst()
 			.ifPresent(book -> book.setPublisher(inputWord2));
 		
@@ -159,7 +164,7 @@ public class ListService implements Start, GlobalVariables{
 		System.out.println("수정할 출판 년도를 입력해주세요");
 		int inputNumber = AppUI.InputInteger();
 		DummyDatas.books.stream()
-			.filter(book -> book.getTitle().equals(inputWord))
+			.filter(book -> book.getTitle().equalsIgnoreCase(inputWord))
 			.findFirst()
 			.ifPresent(book -> book.setYear(inputNumber));
 		
@@ -167,7 +172,27 @@ public class ListService implements Start, GlobalVariables{
 		
 
 		DummyDatas.books.forEach(System.out::println);
+	}
+	
+	
+	
+	
+	
+	private static void  removeBook() {
+		seeAllList();
+		System.out.println("삭제할 책의 체목을 입력해주세요");
+		String inputWord = AppUI.InputString();
 		
-		
+		Iterator<Book> iterator = DummyDatas.books.iterator();
+        while (iterator.hasNext()) {
+            Book book = iterator.next();
+            if (book.getTitle().equalsIgnoreCase(inputWord)) {
+                iterator.remove();
+                break; 
+            }
+        }
+
+
+        DummyDatas.books.forEach(System.out::println);
 	}
 }

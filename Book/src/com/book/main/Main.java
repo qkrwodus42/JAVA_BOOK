@@ -9,15 +9,22 @@ public class Main {
 		
 		
 		
+		
+		
 			DummyDatas.InitializeData();
+			
+			
+			
 			
 			
 			
 			AppController controller = new AppController();
 			
 			
+			
 			while(true) {
 				AppUI.startScreen(); 
+				
 				
 				
 				int inputNumber = AppUI.InputInteger();

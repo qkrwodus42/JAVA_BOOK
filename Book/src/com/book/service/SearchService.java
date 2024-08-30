@@ -1,5 +1,9 @@
 package com.book.service;
 
+import java.util.Collections;
+import java.util.Comparator;
+
+import com.book.book.Book;
 import com.book.data.DummyDatas;
 import com.book.global.AppUI;
 import com.book.global.GlobalVariables;
@@ -32,6 +36,7 @@ public class SearchService implements Start, GlobalVariables {
 			AppUI.InputString();
 		}			
 	}
+
 	
 	private void searchByTitle() {
 		System.out.println("검색할 이름을 적어주세요");
@@ -46,6 +51,7 @@ public class SearchService implements Start, GlobalVariables {
 	}
 	
 	private void searchByPublisher() {
+		System.out.println("검색할 이름을 적어주세요");
 		String inputWord = AppUI.InputString();
 		
 		for (int g = 0; g < DummyDatas.books.size(); g++) {

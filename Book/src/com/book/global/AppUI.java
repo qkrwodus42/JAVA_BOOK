@@ -71,6 +71,7 @@ public class AppUI {
 		System.out.println("### 2. 책 이름 순으로 목록  보기");
 		System.out.println("### 3. 책 가격 순으로 목록 보기");
 		System.out.println("### 4. 책 수정하기");
+		System.out.println("### 5. 책 삭제하기");
 		System.out.println("### 9. 메인 페이지로 돌아가기");
 		TerminateProgramMessages();
 		System.out.println("--------------------------------------");

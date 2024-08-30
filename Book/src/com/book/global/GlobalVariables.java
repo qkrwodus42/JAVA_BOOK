@@ -13,6 +13,7 @@ public interface GlobalVariables {
 	int seeByTitle = 2;
 	int seeByPrice = 3;
 	int reviseNum = 4;
+	int removeNum = 5;
 	
 	//saveScreen
 	int saveNum = 1;
